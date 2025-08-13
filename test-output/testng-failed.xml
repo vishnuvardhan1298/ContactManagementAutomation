@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ContactManagementSuite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.cm.tests.listeners.ExtentListeners"/>
+  </listeners>
+  <test thread-count="5" name="AllTests(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.cm.tests.CreateContactTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyAddingContactWithAllValidDetails"/>
+          <include name="setup"/>
+          <include name="verifyAddingContactWithMissingRequiredFields"/>
+        </methods>
+      </class> <!-- com.cm.tests.CreateContactTests -->
+      <class name="com.cm.tests.ValidationTests">
+        <methods>
+          <include name="verifyPhoneNumericValidation"/>
+          <include name="tearDown"/>
+          <include name="verifyUnicodeAndEmojiAddress"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.cm.tests.ValidationTests -->
+      <class name="com.cm.tests.SecurityTests">
+        <methods>
+          <include name="verifyLoginRequiredToAccessContactList"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.cm.tests.SecurityTests -->
+      <class name="com.cm.tests.NavigationTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyLogoutRedirectsToLogin"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.cm.tests.NavigationTests -->
+      <class name="com.cm.tests.LoginTests">
+        <methods>
+          <include name="verifyLoginWithIncorrectPassword"/>
+          <include name="verifyLoginWithEmptyFields"/>
+          <include name="tearDown"/>
+          <include name="verifyLoginWithValidCredentials"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.cm.tests.LoginTests -->
+      <class name="com.cm.tests.RegistrationTests">
+        <methods>
+          <include name="verifyRegistrationWithAlreadyRegisteredEmail"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="verifySignUpWithValidInputs"/>
+        </methods>
+      </class> <!-- com.cm.tests.RegistrationTests -->
+      <class name="com.cm.tests.EditContactTests">
+        <methods>
+          <include name="verifyUserCanEditExistingContact"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.cm.tests.EditContactTests -->
+      <class name="com.cm.tests.DeleteContactTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyDeletingAContact"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.cm.tests.DeleteContactTests -->
+    </classes>
+  </test> <!-- AllTests(failed) -->
+</suite> <!-- Failed suite [ContactManagementSuite] -->
